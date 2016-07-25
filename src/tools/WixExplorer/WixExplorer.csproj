@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{D69F7BD2-6B2C-441A-8146-7DE61209A4E5}</ProjectGuid>
+    <AssemblyName>WixExplorer</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Microsoft.Tools.WindowsInstallerXml.Tools</RootNamespace>
+    <PlatformTarget>x86</PlatformTarget>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|arm'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|arm'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MsiDisplay\DirectoryViewModel.cs" />
+    <Compile Include="MsiDisplay\LogicalRootViewModel.cs" />
+    <Page Include="MsiDisplay\MsiDisplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MsiDisplay\MsiDisplay.xaml.cs">
+      <DependentUpon>MsiDisplay.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MsiDisplay\MsiDisplayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="MsiDisplay\MsiDisplayControl.xaml.cs">
+      <DependentUpon>MsiDisplayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MsiDisplay\MsiDisplayViewModel.cs" />
+    <Compile Include="MsiDisplay\MsiTreeViewItemDetail.cs" />
+    <Compile Include="MsiDisplay\RegistryViewModel.cs" />
+    <Compile Include="MsiDisplay\FileViewModel.cs" />
+    <Compile Include="MsiDisplay\ComponentViewModel.cs" />
+    <Compile Include="MsiDisplay\FeatureViewModel.cs" />
+    <Compile Include="MsiDisplay\MsiTreeViewItemViewModel.cs" />
+    <Compile Include="MsiDisplay\MsiInfoViewModel.cs" />
+    <Compile Include="MsiDisplay\SetupExplorerViewModel.cs" />
+    <Compile Include="MsiDisplay\TableRootViewModel.cs" />
+    <Compile Include="MsiDisplay\TableViewModel.cs" />
+    <Compile Include="MsiObjects\ComponentInfo.cs" />
+    <Compile Include="MsiObjects\DirectoryInfo.cs" />
+    <Compile Include="MsiObjects\Extensions.cs" />
+    <Compile Include="MsiObjects\FeatureComponentsInfo.cs" />
+    <Compile Include="MsiObjects\FeatureInfo.cs" />
+    <Compile Include="MsiObjects\RegistryInfo.cs" />
+    <Compile Include="MsiObjects\FileInfo.cs" />
+    <Compile Include="MsiObjects\MsiInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MsiDisplay\Images\MsiInfo.png" />
+    <Resource Include="MsiDisplay\Images\Feature.png" />
+    <Resource Include="MsiDisplay\Images\Component.png" />
+    <Resource Include="MsiDisplay\Images\File.png" />
+    <Resource Include="MsiDisplay\Images\Registry.png" />
+    <Resource Include="MsiDisplay\Images\Row.png" />
+    <Resource Include="MsiDisplay\Images\Table.png" />
+    <Resource Include="MsiDisplay\Images\LogicalRoot.png" />
+    <Resource Include="MsiDisplay\Images\TableRoot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\Microsoft.Tools.WindowsInstallerXml\Microsoft.Tools.WindowsInstallerXml.csproj">
+      <Project>{6a98499e-40ec-4335-9c31-96a2511d47c6}</Project>
+      <Name>Microsoft.Tools.WindowsInstallerXml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wix\Wix.csproj">
+      <Project>{9E03A94C-C70E-45C6-A269-E737BBD8B319}</Project>
+      <Name>Wix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), wix.proj))\tools\WixBuild.targets" />
+</Project>

@@ -26,6 +26,8 @@
     <ProjectReference Include="smoke\smoke.csproj" />
     <ProjectReference Include="wixcop\wixcop.csproj" />
 
+    <ProjectReference Include="WixExplorer\WixExplorer.csproj" />
+
     <ProjectReference Include="thmviewer\thmviewer.vcxproj" />
   </ItemGroup>
 
