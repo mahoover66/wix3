@@ -28,7 +28,7 @@
         <MenuItem x:Name="menuItemFileExit" Header="E_xit" Click="menuItemFileExit_Click" />
       </MenuItem>
       <MenuItem x:Name="menuItemHelp" Header="_Help" >
-        <MenuItem x:Name="menuItemHelpAbout" Header="_About Setup Explorer" Click="menuItemHelpAbout_Click" />
+        <MenuItem x:Name="menuItemHelpAbout" Header="_About Wix Explorer" Click="menuItemHelpAbout_Click" />
       </MenuItem>
     </Menu>
 

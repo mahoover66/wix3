@@ -40,7 +40,7 @@
                     >
           <StackPanel Orientation="Horizontal">
             <Image Width="16" Height="16" Margin="3,0" Source="Images\MsiInfo.png" />
-            <TextBlock Text="Setup Explorer" />
+            <TextBlock Text="Wix Explorer" />
           </StackPanel>
         </HierarchicalDataTemplate>
 
@@ -100,7 +100,7 @@
 
         <DataTemplate DataType="{x:Type local:DirectoryViewModel}">
           <StackPanel Orientation="Horizontal">
-            <Image Width="16" Height="16" Margin="3,0" Source="Images\File.png" />
+            <Image Width="16" Height="16" Margin="3,0" Source="Images\Dir.png" />
             <TextBlock Text="{Binding Directory}" />
           </StackPanel>
         </DataTemplate>
