@@ -18,34 +18,45 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MsiDisplay\DirectoryViewModel.cs" />
-    <Compile Include="MsiDisplay\LogicalRootViewModel.cs" />
-    <Page Include="MsiDisplay\MsiDisplay.xaml">
+    <Page Include="Display\Controls\MsiDisplayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Display\Controls\MsiDisplayControl.xaml.cs">
+      <DependentUpon>MsiDisplayControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Display\Dialogs\OpenDiffDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="MsiDisplay\MsiDisplay.xaml.cs">
+    <Compile Include="Display\Dialogs\OpenDiffDialog.xaml.cs">
+      <DependentUpon>OpenDiffDialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Display\ViewModels\DiffRootViewModel.cs" />
+    <Compile Include="Display\ViewModels\DiffTableViewModel.cs" />
+    <Compile Include="Display\ViewModels\DirectoryRootViewModel.cs" />
+    <Compile Include="Display\ViewModels\FeatureViewModel.cs" />
+    <Compile Include="Display\ViewModels\MsiTreeViewItemViewModel.cs" />
+    <Compile Include="Display\ViewModels\WixPdbViewModel.cs" />
+    <Compile Include="Display\ViewModels\WixExplorerViewModel.cs" />
+    <Compile Include="Display\ViewModels\TableRootViewModel.cs" />
+    <Compile Include="Display\ViewModels\TableViewModel.cs" />
+    <Compile Include="Display\ViewModels\ComponentViewModel.cs" />
+    <Compile Include="Display\ViewModels\DirectoryViewModel.cs" />
+    <Compile Include="Display\ViewModels\FileViewModel.cs" />
+    <Compile Include="Display\ViewModels\LogicalRootViewModel.cs" />
+    <Compile Include="Display\ViewModels\MsiDisplayViewModel.cs" />
+    <Compile Include="Display\ViewModels\RegistryViewModel.cs" />
+    <Page Include="Display\MsiDisplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Display\MsiDisplay.xaml.cs">
       <DependentUpon>MsiDisplay.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MsiDisplay\MsiDisplayControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="MsiDisplay\MsiDisplayControl.xaml.cs">
-      <DependentUpon>MsiDisplayControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MsiDisplay\MsiDisplayViewModel.cs" />
-    <Compile Include="MsiDisplay\MsiTreeViewItemDetail.cs" />
-    <Compile Include="MsiDisplay\RegistryViewModel.cs" />
-    <Compile Include="MsiDisplay\FileViewModel.cs" />
-    <Compile Include="MsiDisplay\ComponentViewModel.cs" />
-    <Compile Include="MsiDisplay\FeatureViewModel.cs" />
-    <Compile Include="MsiDisplay\MsiTreeViewItemViewModel.cs" />
-    <Compile Include="MsiDisplay\MsiInfoViewModel.cs" />
-    <Compile Include="MsiDisplay\SetupExplorerViewModel.cs" />
-    <Compile Include="MsiDisplay\TableRootViewModel.cs" />
-    <Compile Include="MsiDisplay\TableViewModel.cs" />
+    <Compile Include="Display\MsiTreeViewItemDetail.cs" />
     <Compile Include="MsiObjects\ComponentInfo.cs" />
     <Compile Include="MsiObjects\DirectoryInfo.cs" />
     <Compile Include="MsiObjects\Extensions.cs" />
@@ -53,7 +64,7 @@
     <Compile Include="MsiObjects\FeatureInfo.cs" />
     <Compile Include="MsiObjects\RegistryInfo.cs" />
     <Compile Include="MsiObjects\FileInfo.cs" />
-    <Compile Include="MsiObjects\MsiInfo.cs" />
+    <Compile Include="MsiObjects\WixPdbInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,19 +72,21 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MsiDisplay\Images\MsiInfo.png" />
-    <Resource Include="MsiDisplay\Images\Feature.png" />
-    <Resource Include="MsiDisplay\Images\Component.png" />
-    <Resource Include="MsiDisplay\Images\File.png" />
-    <Resource Include="MsiDisplay\Images\Registry.png" />
-    <Resource Include="MsiDisplay\Images\Row.png" />
-    <Resource Include="MsiDisplay\Images\Table.png" />
-    <Resource Include="MsiDisplay\Images\LogicalRoot.png" />
-    <Resource Include="MsiDisplay\Images\TableRoot.png" />
+    <Resource Include="Display\Images\WixPdbInfo.png" />
+    <Resource Include="Display\Images\Feature.png" />
+    <Resource Include="Display\Images\Component.png" />
+    <Resource Include="Display\Images\File.png" />
+    <Resource Include="Display\Images\Registry.png" />
+    <Resource Include="Display\Images\Row.png" />
+    <Resource Include="Display\Images\Table.png" />
+    <Resource Include="Display\Images\LogicalRoot.png" />
+    <Resource Include="Display\Images\TableRoot.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -90,5 +103,9 @@
       <Name>Wix</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Display\Images\FileRoot.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), wix.proj))\tools\WixBuild.targets" />
 </Project>

@@ -28,7 +28,7 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
             return directory;
         }
 
-        public void ComputeMetadata(MsiInfo msiInfo)
+        public void ComputeMetadata(WixPdbInfo WixPdbInfo)
         {
             DirectoryName = s_dirNameRegex.Value.Replace(DefaultDir, "");
 
@@ -37,7 +37,7 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
 
             // now get the parent
             DirectoryInfo parent;
-            if (!string.IsNullOrEmpty(Directory_Parent) && msiInfo.Directories.TryGetValue(Directory_Parent, out parent))
+            if (!string.IsNullOrEmpty(Directory_Parent) && WixPdbInfo.Directories.TryGetValue(Directory_Parent, out parent))
             {
                 // we have a parent
                 Parent = parent;
@@ -45,7 +45,7 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
                 // has its metadata been computed?
                 if (string.IsNullOrEmpty(Parent.FullPath))
                 {
-                    Parent.ComputeMetadata(msiInfo);
+                    Parent.ComputeMetadata(WixPdbInfo);
                 }
 
                 // compute the final full path
