@@ -11,15 +11,15 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         {
             FeatureInfo = featureInfo;
 
-            Details = new ObservableCollection<MsiTreeViewItemDetail>();
-            Details.Add(new MsiTreeViewItemDetail("Feature", FeatureInfo.Feature));
-            Details.Add(new MsiTreeViewItemDetail("Feature_Parent", FeatureInfo.Feature_Parent));
-            Details.Add(new MsiTreeViewItemDetail("Title", FeatureInfo.Title));
-            Details.Add(new MsiTreeViewItemDetail("Description", FeatureInfo.Description));
-            Details.Add(new MsiTreeViewItemDetail("Display", FeatureInfo.Display.ToString()));
-            Details.Add(new MsiTreeViewItemDetail("Level", FeatureInfo.Level.ToString()));
-            Details.Add(new MsiTreeViewItemDetail("Directory_", FeatureInfo.Directory_));
-            Details.Add(new MsiTreeViewItemDetail("Attributes", Enum.GetName(typeof(FeatureAttributes), FeatureInfo.Attributes)));
+            Details = new ObservableCollection<ItemDetail>();
+            Details.Add(new NameValueItemDetail("Feature", FeatureInfo.Feature, null));
+            Details.Add(new NameValueItemDetail("Feature_Parent", FeatureInfo.Feature_Parent, null));
+            Details.Add(new NameValueItemDetail("Title", FeatureInfo.Title, null));
+            Details.Add(new NameValueItemDetail("Description", FeatureInfo.Description, null));
+            Details.Add(new NameValueItemDetail("Display", FeatureInfo.Display.ToString(), null));
+            Details.Add(new NameValueItemDetail("Level", FeatureInfo.Level.ToString(), null));
+            Details.Add(new NameValueItemDetail("Directory_", FeatureInfo.Directory_, null));
+            Details.Add(new NameValueItemDetail("Attributes", Enum.GetName(typeof(FeatureAttributes), FeatureInfo.Attributes), null));
         }
 
         public FeatureInfo FeatureInfo { get; protected set; }

@@ -45,6 +45,12 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
 
         private void menuItemFileDiff_Click(object sender, RoutedEventArgs e)
         {
+            if (ViewModel.Msis.Count < 2)
+            {
+                MessageBox.Show("You must have at least two MSIs open in order to diff", "Wix Explorer Error", MessageBoxButton.OK);
+                return;
+            }
+
             // Configure open file dialog box 
             OpenDiffDialog dlg = new OpenDiffDialog(ViewModel);
 
@@ -54,7 +60,14 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
             // Process open file dialog box results 
             if (result == true)
             {
-                MessageBox.Show("OpenDiffDlg returned true");
+                if (dlg.LeftMsi == null || dlg.RightMsi == null)
+                {
+                    MessageBox.Show("You must have select two MSIs in order to diff", "Wix Explorer Error", MessageBoxButton.OK);
+                    return;
+                }
+
+                DiffRootViewModel diffRootViewModel = new DiffRootViewModel(dlg.LeftMsi, dlg.RightMsi);
+                ViewModel.AddDiffView(diffRootViewModel);
             }
         }
 

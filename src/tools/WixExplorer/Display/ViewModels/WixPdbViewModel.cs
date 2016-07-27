@@ -8,16 +8,16 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         public WixPdbViewModel(WixPdbInfo WixPdbInfo)
             : base(WixPdbInfo, null, true)
         {
-            Details = new ObservableCollection<MsiTreeViewItemDetail>();
-            Details.Add(new MsiTreeViewItemDetail("FilePath", WixPdbInfo.FilePath));
-            Details.Add(new MsiTreeViewItemDetail("Title", WixPdbInfo.Title));
-            Details.Add(new MsiTreeViewItemDetail("Subject", WixPdbInfo.Subject));
-            Details.Add(new MsiTreeViewItemDetail("Comments", WixPdbInfo.Comments));
-            Details.Add(new MsiTreeViewItemDetail("Keywords", WixPdbInfo.Keywords));
-            Details.Add(new MsiTreeViewItemDetail("Platform", WixPdbInfo.Platform));
-            Details.Add(new MsiTreeViewItemDetail("PackageCode", WixPdbInfo.PackageCode));
-            Details.Add(new MsiTreeViewItemDetail("Schemna", WixPdbInfo.Schemna));
-            Details.Add(new MsiTreeViewItemDetail("Languages", WixPdbInfo.Languages));
+            Details = new ObservableCollection<ItemDetail>();
+            Details.Add(new NameValueItemDetail("FilePath", WixPdbInfo.FilePath, null));
+            Details.Add(new NameValueItemDetail("Title", WixPdbInfo.Title, null));
+            Details.Add(new NameValueItemDetail("Subject", WixPdbInfo.Subject, null));
+            Details.Add(new NameValueItemDetail("Comments", WixPdbInfo.Comments, null));
+            Details.Add(new NameValueItemDetail("Keywords", WixPdbInfo.Keywords, null));
+            Details.Add(new NameValueItemDetail("Platform", WixPdbInfo.Platform, null));
+            Details.Add(new NameValueItemDetail("PackageCode", WixPdbInfo.PackageCode, null));
+            Details.Add(new NameValueItemDetail("Schemna", WixPdbInfo.Schemna, null));
+            Details.Add(new NameValueItemDetail("Languages", WixPdbInfo.Languages, null));
         }
 
         public MsiTreeViewItemViewModel ViewModel

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -18,13 +19,8 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
 
         protected override void LoadChildren()
         {
-            Table[] leftTables = new Table[LeftWixPdbInfo.Tables.Count];
-            LeftWixPdbInfo.Tables.CopyTo(leftTables, 0);
-            IEnumerator<Table> enumLeft = leftTables.OrderBy(t => t.Name).GetEnumerator();
-
-            Table[] rightTables = new Table[RightWixPdbInfo.Tables.Count];
-            RightWixPdbInfo.Tables.CopyTo(rightTables, 0);
-            IEnumerator<Table> enumRight = rightTables.OrderBy(t => t.Name).GetEnumerator();
+            IEnumerator enumLeft = RightWixPdbInfo.Tables.GetEnumerator();
+            IEnumerator enumRight = RightWixPdbInfo.Tables.GetEnumerator();
 
             bool nextLeft = enumLeft.MoveNext();
             bool nextRight = enumRight.MoveNext();
@@ -34,37 +30,42 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
                 if (nextLeft && nextRight)
                 {
                     // we have both items, compare them
-                    int compare = string.Compare(enumLeft.Current.Name, enumRight.Current.Name, StringComparison.Ordinal);
+                    Table left = (Table)enumLeft.Current;
+                    Table right = (Table)enumRight.Current;
+                    // this compares the table name then the columns
+                    int compare = left.Definition.CompareTo(right.Definition);
                     if (compare < 0)
                     {
                         // left is smaller, only add it
-                        AddChildTable(enumLeft.Current, null);
+                        AddChildTable(left, null);
                         nextLeft = enumLeft.MoveNext();
                     }
                     else if (compare == 0)
                     {
                         // they have the same name, use them both
-                        AddChildTable(enumLeft.Current, enumRight.Current);
+                        AddChildTable(left, right);
                         nextLeft = enumLeft.MoveNext();
                         nextRight = enumRight.MoveNext();
                     }
                     else
                     {
                         // right is smaller, only add it
-                        AddChildTable(null, enumRight.Current);
+                        AddChildTable(null, right);
                         nextRight = enumRight.MoveNext();
                     }
                 }
                 else if (nextLeft)
                 {
                     // we only have left items remaining, use them
-                    AddChildTable(enumLeft.Current, null);
+                    Table left = (Table)enumLeft.Current;
+                    AddChildTable(left, null);
                     nextLeft = enumLeft.MoveNext();
                 }
                 else
                 {
                     // we only have right items remaining, use them
-                    AddChildTable(null, enumRight.Current);
+                    Table right = (Table)enumRight.Current;
+                    AddChildTable(null, right);
                     nextRight = enumRight.MoveNext();
                 }
             }

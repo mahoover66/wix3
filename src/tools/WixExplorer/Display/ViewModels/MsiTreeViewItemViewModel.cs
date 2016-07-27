@@ -9,7 +9,7 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
     {
         static readonly MsiTreeViewItemViewModel s_dummyChild = new MsiTreeViewItemViewModel();
 
-        public ObservableCollection<MsiTreeViewItemDetail> Details { get; protected set; }
+        public ObservableCollection<ItemDetail> Details { get; protected set; }
         public ObservableCollection<MsiTreeViewItemViewModel> Children { get; protected set; }
         public WixPdbInfo WixPdbInfo { get; protected set; }
         public MsiTreeViewItemViewModel Parent { get; protected set; }

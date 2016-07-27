@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Tools.WindowsInstallerXml.Tools
 {
-    public class MsiTreeViewItemDetail
+    class NameValueItemDetail : ItemDetail
     {
-        public MsiTreeViewItemDetail(string name, string value)
+        public NameValueItemDetail(string name, string value, IList<string> colors)
+            : base(colors)
         {
             Name = name;
             Value = value;

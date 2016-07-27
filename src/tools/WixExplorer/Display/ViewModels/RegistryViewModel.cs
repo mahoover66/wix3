@@ -9,13 +9,13 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         {
             RegistryInfo = registryInfo;
 
-            Details = new ObservableCollection<MsiTreeViewItemDetail>();
-            Details.Add(new MsiTreeViewItemDetail("Registry", RegistryInfo.Registry));
-            Details.Add(new MsiTreeViewItemDetail("Root", RegistryInfo.Root.ToString()));
-            Details.Add(new MsiTreeViewItemDetail("Key", RegistryInfo.Key));
-            Details.Add(new MsiTreeViewItemDetail("Name", RegistryInfo.Name));
-            Details.Add(new MsiTreeViewItemDetail("Value", RegistryInfo.Value));
-            Details.Add(new MsiTreeViewItemDetail("Component_", RegistryInfo.Component_));
+            Details = new ObservableCollection<ItemDetail>();
+            Details.Add(new NameValueItemDetail("Registry", RegistryInfo.Registry, null));
+            Details.Add(new NameValueItemDetail("Root", RegistryInfo.Root.ToString(), null));
+            Details.Add(new NameValueItemDetail("Key", RegistryInfo.Key, null));
+            Details.Add(new NameValueItemDetail("Name", RegistryInfo.Name, null));
+            Details.Add(new NameValueItemDetail("Value", RegistryInfo.Value, null));
+            Details.Add(new NameValueItemDetail("Component_", RegistryInfo.Component_, null));
         }
 
         public RegistryInfo RegistryInfo { get; protected set; }

@@ -15,6 +15,13 @@
             this.IsExpanded = true;
         }
 
+        public void AddDiffView(DiffRootViewModel diffRootView)
+        {
+            Children.Add(diffRootView);
+            diffRootView.IsSelected = true;
+            this.IsExpanded = true;
+        }
+
         public override void Selected(MsiDisplayControl control)
         {
             control.Details.ItemsSource = null;

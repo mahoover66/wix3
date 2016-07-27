@@ -11,13 +11,13 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         {
             ComponentInfo = componentInfo;
 
-            Details = new ObservableCollection<MsiTreeViewItemDetail>();
-            Details.Add(new MsiTreeViewItemDetail("Component", ComponentInfo.Component));
-            Details.Add(new MsiTreeViewItemDetail("ComponentId", ComponentInfo.ComponentId));
-            Details.Add(new MsiTreeViewItemDetail("Directory_", ComponentInfo.Directory_));
-            Details.Add(new MsiTreeViewItemDetail("Attributes", Enum.GetName(typeof(ComponentAttributes), ComponentInfo.Attributes)));
-            Details.Add(new MsiTreeViewItemDetail("Condition", ComponentInfo.Condition));
-            Details.Add(new MsiTreeViewItemDetail("KeyPath", ComponentInfo.KeyPath));
+            Details = new ObservableCollection<ItemDetail>();
+            Details.Add(new NameValueItemDetail("Component", ComponentInfo.Component, null));
+            Details.Add(new NameValueItemDetail("ComponentId", ComponentInfo.ComponentId, null));
+            Details.Add(new NameValueItemDetail("Directory_", ComponentInfo.Directory_, null));
+            Details.Add(new NameValueItemDetail("Attributes", Enum.GetName(typeof(ComponentAttributes), ComponentInfo.Attributes), null));
+            Details.Add(new NameValueItemDetail("Condition", ComponentInfo.Condition, null));
+            Details.Add(new NameValueItemDetail("KeyPath", ComponentInfo.KeyPath, null));
         }
 
         public ComponentInfo ComponentInfo { get; protected set; }

@@ -10,15 +10,15 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         {
             FileInfo = fileInfo;
 
-            Details = new ObservableCollection<MsiTreeViewItemDetail>();
-            Details.Add(new MsiTreeViewItemDetail("File", FileInfo.File));
-            Details.Add(new MsiTreeViewItemDetail("Component_", FileInfo.Component_));
-            Details.Add(new MsiTreeViewItemDetail("FileName", FileInfo.FileName));
-            Details.Add(new MsiTreeViewItemDetail("FileSize", FileInfo.FileSize.ToString()));
-            Details.Add(new MsiTreeViewItemDetail("Version", FileInfo.Version));
-            Details.Add(new MsiTreeViewItemDetail("Language", FileInfo.Language));
-            Details.Add(new MsiTreeViewItemDetail("Attributes", Enum.GetName(typeof(FileAttributes), FileInfo.Attributes)));
-            Details.Add(new MsiTreeViewItemDetail("Sequence", FileInfo.Sequence.ToString()));
+            Details = new ObservableCollection<ItemDetail>();
+            Details.Add(new NameValueItemDetail("File", FileInfo.File, null));
+            Details.Add(new NameValueItemDetail("Component_", FileInfo.Component_, null));
+            Details.Add(new NameValueItemDetail("FileName", FileInfo.FileName, null));
+            Details.Add(new NameValueItemDetail("FileSize", FileInfo.FileSize.ToString(), null));
+            Details.Add(new NameValueItemDetail("Version", FileInfo.Version, null));
+            Details.Add(new NameValueItemDetail("Language", FileInfo.Language, null));
+            Details.Add(new NameValueItemDetail("Attributes", Enum.GetName(typeof(FileAttributes), FileInfo.Attributes), null));
+            Details.Add(new NameValueItemDetail("Sequence", FileInfo.Sequence.ToString(), null));
         }
 
         public FileInfo FileInfo { get; protected set; }

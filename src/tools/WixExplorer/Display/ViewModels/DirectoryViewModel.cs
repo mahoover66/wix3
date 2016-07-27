@@ -10,12 +10,12 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         {
             DirectoryInfo = directoryInfo;
 
-            Details = new ObservableCollection<MsiTreeViewItemDetail>();
-            Details.Add(new MsiTreeViewItemDetail("Directory", DirectoryInfo.Directory));
-            Details.Add(new MsiTreeViewItemDetail("Directory_Parent", DirectoryInfo.Directory_Parent));
-            Details.Add(new MsiTreeViewItemDetail("DefaultDir", DirectoryInfo.DefaultDir));
-            Details.Add(new MsiTreeViewItemDetail("DirectoryName", DirectoryInfo.DirectoryName));
-            Details.Add(new MsiTreeViewItemDetail("FullPath", DirectoryInfo.FullPath));
+            Details = new ObservableCollection<ItemDetail>();
+            Details.Add(new NameValueItemDetail("Directory", DirectoryInfo.Directory, null));
+            Details.Add(new NameValueItemDetail("Directory_Parent", DirectoryInfo.Directory_Parent, null));
+            Details.Add(new NameValueItemDetail("DefaultDir", DirectoryInfo.DefaultDir, null));
+            Details.Add(new NameValueItemDetail("DirectoryName", DirectoryInfo.DirectoryName, null));
+            Details.Add(new NameValueItemDetail("FullPath", DirectoryInfo.FullPath, null));
         }
 
         public DirectoryInfo DirectoryInfo { get; protected set; }

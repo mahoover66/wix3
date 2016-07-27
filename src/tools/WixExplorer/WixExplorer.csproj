@@ -56,14 +56,16 @@
       <DependentUpon>MsiDisplay.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Display\MsiTreeViewItemDetail.cs" />
     <Compile Include="MsiObjects\ComponentInfo.cs" />
     <Compile Include="MsiObjects\DirectoryInfo.cs" />
     <Compile Include="MsiObjects\Extensions.cs" />
     <Compile Include="MsiObjects\FeatureComponentsInfo.cs" />
     <Compile Include="MsiObjects\FeatureInfo.cs" />
+    <Compile Include="MsiObjects\ItemDetail.cs" />
+    <Compile Include="MsiObjects\NameValueItemDetail.cs" />
     <Compile Include="MsiObjects\RegistryInfo.cs" />
     <Compile Include="MsiObjects\FileInfo.cs" />
+    <Compile Include="MsiObjects\RowItemDetail.cs" />
     <Compile Include="MsiObjects\WixPdbInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

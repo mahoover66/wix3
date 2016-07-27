@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Microsoft.Tools.WindowsInstallerXml.Tools
@@ -23,6 +24,11 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         {
             Msis.Add(WixPdbInfo);
             WixExplorer.AddWixPdbInfo(WixPdbInfo);
+        }
+
+        internal void AddDiffView(DiffRootViewModel diffRootViewModel)
+        {
+            WixExplorer.Children.Add(diffRootViewModel);
         }
     }
 }
