@@ -13,6 +13,27 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
             Colors = colors;
         }
 
-        public IList<string> Colors { get; protected set; }
+        protected IList<string> Colors { get; set; }
+
+        public string FixedColor
+        {
+            get
+            {
+                return "red";
+            }
+        }
+
+        public string GetColumnColor(int columnIndex)
+        {
+            if (null != Colors)
+            {
+                if (columnIndex < Colors.Count)
+                {
+                    return Colors[columnIndex];
+                }
+            }
+
+            return "white";
+        }
     }
 }

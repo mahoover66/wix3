@@ -27,9 +27,7 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         public override void Selected(MsiDisplayControl control)
         {
             DataGrid grid = control.Details;
-
             grid.ItemsSource = Table.Rows;
-
             grid.Columns.Clear();
 
             Microsoft.Tools.WindowsInstallerXml.ColumnDefinitionCollection columnDefs = Table.Definition.Columns;

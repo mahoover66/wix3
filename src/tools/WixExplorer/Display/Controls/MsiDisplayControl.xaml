@@ -7,6 +7,10 @@
     xmlns:local="clr-namespace:Microsoft.Tools.WindowsInstallerXml.Tools" 
     mc:Ignorable="d">
 
+    <UserControl.Resources>
+        <local:NameToBrushConverter x:Key="NameToBrushConverter"/>
+    </UserControl.Resources>
+
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -143,13 +147,27 @@
 
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
+                    <Setter Property="FontWeight" Value="Normal" />
+                    <Setter Property="Background" Value="{Binding Path=FixedColor, Converter={StaticResource NameToBrushConverter}}" />
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="SeaGreen" />
+                            <Setter Property="FontWeight" Value="Bold" />
                         </Trigger>
                     </Style.Triggers>
                 </Style>
             </DataGrid.CellStyle>
+
+            <!--
+            <Style TargetType="DataGridCell">
+                <Setter Property="FontWeight" Value="Normal" />
+                <Setter Property="Background" Value="{Binding Colors}" />
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            -->
         </DataGrid>
     </Grid>
 </UserControl>

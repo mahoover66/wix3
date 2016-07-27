@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Tools.WindowsInstallerXml;
+using System.Collections;
 
 namespace Microsoft.Tools.WindowsInstallerXml.Tools
 {
     public static class Extensions
     {
+        public static IEnumerator<T> Cast<T>(this IEnumerator iterator)
+        {
+            while (iterator.MoveNext())
+            {
+                yield return (T)iterator.Current;
+            }
+        }
+
         public static int FindFieldIndex(this ColumnDefinitionCollection columns, string name)
         {
             for (int i = 0; i < columns.Count; i++)

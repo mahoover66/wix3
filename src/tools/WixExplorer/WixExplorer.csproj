@@ -29,6 +29,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Display\Controls\NameToBrushConverter.cs" />
     <Compile Include="Display\Dialogs\OpenDiffDialog.xaml.cs">
       <DependentUpon>OpenDiffDialog.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -56,9 +57,10 @@
       <DependentUpon>MsiDisplay.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\RowComparer.cs" />
     <Compile Include="MsiObjects\ComponentInfo.cs" />
     <Compile Include="MsiObjects\DirectoryInfo.cs" />
-    <Compile Include="MsiObjects\Extensions.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="MsiObjects\FeatureComponentsInfo.cs" />
     <Compile Include="MsiObjects\FeatureInfo.cs" />
     <Compile Include="MsiObjects\ItemDetail.cs" />

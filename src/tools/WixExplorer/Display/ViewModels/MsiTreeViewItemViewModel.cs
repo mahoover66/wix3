@@ -100,6 +100,7 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
         public virtual void Selected(MsiDisplayControl control)
         {
             control.Details.ItemsSource = null;
+            control.Details.Columns.Clear();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

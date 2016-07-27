@@ -19,7 +19,7 @@ namespace Microsoft.Tools.WindowsInstallerXml.Tools
 
         protected override void LoadChildren()
         {
-            IEnumerator enumLeft = RightWixPdbInfo.Tables.GetEnumerator();
+            IEnumerator enumLeft = LeftWixPdbInfo.Tables.GetEnumerator();
             IEnumerator enumRight = RightWixPdbInfo.Tables.GetEnumerator();
 
             bool nextLeft = enumLeft.MoveNext();
