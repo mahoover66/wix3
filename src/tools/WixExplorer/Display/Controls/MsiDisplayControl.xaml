@@ -43,91 +43,91 @@
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type local:WixExplorerViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="display/images/wixexplorer.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/wixexplorer.png" />
                         <TextBlock Text="Wix Explorer" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <HierarchicalDataTemplate DataType="{x:Type local:WixPdbViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="display/image/wixpdbinfo.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/wixpdbinfo.png" />
                         <TextBlock Text="{Binding MsiName}" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <HierarchicalDataTemplate DataType="{x:Type local:LogicalRootViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display/Images/LogicalRoot.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/LogicalRoot.png" />
                         <TextBlock Text="Logical View" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <HierarchicalDataTemplate DataType="{x:Type local:FeatureViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\Feature.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/Feature.png" />
                         <TextBlock Text="{Binding Feature}" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <HierarchicalDataTemplate DataType="{x:Type local:ComponentViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\Component.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/Component.png" />
                         <TextBlock Text="{Binding Component}" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <DataTemplate DataType="{x:Type local:FileViewModel}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\File.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/File.png" />
                         <TextBlock Text="{Binding File}" />
                     </StackPanel>
                 </DataTemplate>
 
                 <DataTemplate DataType="{x:Type local:RegistryViewModel}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\Registry.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/Registry.png" />
                         <TextBlock Text="{Binding Registry}" />
                     </StackPanel>
                 </DataTemplate>
 
                 <HierarchicalDataTemplate DataType="{x:Type local:DirectoryRootViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\DirRoot.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/DirRoot.png" />
                         <TextBlock Text="Directories" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <HierarchicalDataTemplate DataType="{x:Type local:DirectoryViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\Dir.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/Dir.png" />
                         <TextBlock Text="{Binding Directory}" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <HierarchicalDataTemplate DataType="{x:Type local:TableRootViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\TableRoot.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/TableRoot.png" />
                         <TextBlock Text="Table View" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <DataTemplate DataType="{x:Type local:TableViewModel}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\Table.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/Table.png" />
                         <TextBlock Text="{Binding TableName}" />
                     </StackPanel>
                 </DataTemplate>
 
                 <HierarchicalDataTemplate DataType="{x:Type local:DiffRootViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\DiffRoot.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/DiffRoot.png" />
                         <TextBlock Text="Differences" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
 
                 <DataTemplate DataType="{x:Type local:DiffTableViewModel}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="16" Height="16" Margin="3,0" Source="Display\Images\Table.png" />
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images/Table.png" />
                         <TextBlock Text="{Binding TableName}" />
                     </StackPanel>
                 </DataTemplate>

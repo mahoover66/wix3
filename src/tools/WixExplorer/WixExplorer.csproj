@@ -76,15 +76,15 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Display\Images\WixPdbInfo.png" />
-    <Resource Include="Display\Images\Feature.png" />
-    <Resource Include="Display\Images\Component.png" />
-    <Resource Include="Display\Images\File.png" />
-    <Resource Include="Display\Images\Registry.png" />
-    <Resource Include="Display\Images\Row.png" />
-    <Resource Include="Display\Images\Table.png" />
-    <Resource Include="Display\Images\LogicalRoot.png" />
-    <Resource Include="Display\Images\TableRoot.png" />
+    <Resource Include="Display\Controls\Images\WixPdbInfo.png" />
+    <Resource Include="Display\Controls\Images\Feature.png" />
+    <Resource Include="Display\Controls\Images\Component.png" />
+    <Resource Include="Display\Controls\Images\File.png" />
+    <Resource Include="Display\Controls\Images\Registry.png" />
+    <Resource Include="Display\Controls\Images\Row.png" />
+    <Resource Include="Display\Controls\Images\Table.png" />
+    <Resource Include="Display\Controls\Images\LogicalRoot.png" />
+    <Resource Include="Display\Controls\Images\TableRoot.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -108,7 +108,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Display\Images\FileRoot.png" />
+    <Resource Include="Display\Controls\Images\DiffRoot.png" />
+    <Resource Include="Display\Controls\Images\Dir.png" />
+    <Resource Include="Display\Controls\Images\DirRoot.png" />
+    <Resource Include="Display\Controls\Images\FileRoot.png" />
+    <Resource Include="Display\Controls\Images\MSI.png" />
+    <Resource Include="Display\Controls\Images\WixExplorer.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), wix.proj))\tools\WixBuild.targets" />
